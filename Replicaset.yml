@@ -6,15 +6,14 @@ metadata:
     app: myapp
 spec:
   template:
+    metadata:
+      name: nginx
+      labels:
+        app: myapp
     spec:
-      metadata:
-        name: nginx
-        labels:
-          app: myapp
-      spec:
-        containers:
-          - name: data
-            image: nginx
+      containers:
+        - name: data
+          image: nginx
 
   replicas: 3
   selector:
