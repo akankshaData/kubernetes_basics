@@ -1,12 +1,16 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  app: myapp
+  name: rs-ex
+  labels:
+    app: myapp
 spec:
   template:
     spec:
       metadata:
-        app: myapp
+        name: nginx
+        labels:
+          app: myapp
       spec:
         containers:
           - name: data
